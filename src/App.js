@@ -1,6 +1,5 @@
 import { Suspense, useState } from "react";
-import { i18n as i18nextInstance } from "./i18n";
-import { I18nextProvider, Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import logo from "./logo.svg";
 
@@ -61,9 +60,7 @@ function App() {
 export default function WrappedApp() {
   return (
     <Suspense fallback="...is loading">
-      <I18nextProvider i18n={i18nextInstance}>
-        <App />
-      </I18nextProvider>
+      <App />
     </Suspense>
   );
 }
